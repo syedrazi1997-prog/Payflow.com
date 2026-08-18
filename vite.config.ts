@@ -13,4 +13,18 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    proxy: {
+      '/api/zippygo': {
+        target: 'https://zippygotransfers.onrender.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/zippygo/, ''),
+      },
+      '/api/zippygo-backend': {
+        target: 'https://zippygo-transfers-backend.onrender.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/zippygo-backend/, ''),
+      },
+    },
+  },
 });
