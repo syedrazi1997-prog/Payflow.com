@@ -1,0 +1,5 @@
+[functions.payflow-api]
+verify_jwt = false
+
+[functions.razorpay-checkout]
+verify_jwt = false
